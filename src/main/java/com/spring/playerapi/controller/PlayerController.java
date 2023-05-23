@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.spring.playerapi.model.Player;
 import com.spring.playerapi.service.PlayerService;
@@ -28,6 +29,15 @@ public class PlayerController {
 		
 		return"mydata";
 	}
+	
+	
+	//localhost:8080/spring-crm-rest/api/players
+		@GetMapping("/player")
+		public Player player(@RequestParam int id){
+			
+			return playerService.showPlayer(id)	;
+		}
+	
 	
 	//localhost:8080/spring-crm-rest/api/players
 	@GetMapping("/players")
