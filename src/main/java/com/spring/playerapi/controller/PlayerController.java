@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -61,6 +62,13 @@ public class PlayerController {
 		
 		playerService.savePlayer(player);
 		return"Successfully added";
+	}
+	
+	//localhost:8080/spring-crm-rest/api/players
+	@PutMapping("/players")
+	public Player updatePlayer(@RequestBody Player player) {
+		playerService.savePlayer(player);
+		return player ;
 	}
 	
 	
